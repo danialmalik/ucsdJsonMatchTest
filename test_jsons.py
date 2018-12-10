@@ -68,7 +68,7 @@ class TransformedJsonTest(unittest.TestCase):
 
     def test_referrer(self):
         self.assertEqual(self.expected_json['referrer']['id'],
-                         self.current_json['page'])
+                         self.current_json['referer'])
         self.assertEqual(self.expected_json['referrer']['type'], 'WebPage')
 
 
