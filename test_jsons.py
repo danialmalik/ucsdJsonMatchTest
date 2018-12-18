@@ -89,8 +89,9 @@ class TransformedJsonTest(unittest.TestCase):
                          self.current_json['page'])
 
     def test_extenstions_session(self):
-        self.assertEqual(self.expected_json['extensions']['extra_fields']['session'],
-                         self.current_json['session'])
+        if 'session' in self.current_json:
+            self.assertEqual(self.expected_json['extensions']['extra_fields']['session'],
+                            self.current_json['session'])
 
     def test_extenstions_user_id(self):
         self.assertEqual(self.expected_json['extensions']['extra_fields']['user_id'],
