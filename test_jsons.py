@@ -2,8 +2,16 @@ import unittest
 import json
 
 
-current_filename = 'current.json'
-expected_filename = 'expected.json'
+JSON_FILES_PATH = '/home/danial/work/arbisoft/ucsd/edx/edx-platform/openedx/features/caliper_tracking/tests/'
+EXPECTED = 'expected/'
+CURRENT = 'current/'
+
+
+EVENT_NAME = 'textbook.pdf.display.scaled'
+
+
+current_filename = '{}{}{}.json'.format(JSON_FILES_PATH, CURRENT, EVENT_NAME)
+expected_filename = '{}{}{}.json'.format(JSON_FILES_PATH, EXPECTED, EVENT_NAME)
 
 
 CALIPER_CONTEXT = "http://purl.imsglobal.org/ctx/caliper/v1p1"
@@ -104,6 +112,9 @@ class TransformedJsonTest(unittest.TestCase):
 
     def test_referrer_type(self):
         self.assertEqual(self.expected_json['referrer']['type'], 'WebPage')
+
+    def tearDown(self):
+        pass
 
 
 if __name__ == '__main__':
