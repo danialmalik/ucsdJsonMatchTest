@@ -7,7 +7,7 @@ EXPECTED = 'expected/'
 CURRENT = 'current/'
 
 
-EVENT_NAME = 'textbook.pdf.display.scaled'
+EVENT_NAME = 'edx.grades.grading_policy_changed'
 
 
 current_filename = '{}{}{}.json'.format(JSON_FILES_PATH, CURRENT, EVENT_NAME)
@@ -19,10 +19,10 @@ CALIPER_CONTEXT = "http://purl.imsglobal.org/ctx/caliper/v1p1"
 
 
 class TransformedJsonTest(unittest.TestCase):
-
-    def setUp(self):
-        self.current_json = json.loads(open(current_filename).read())
-        self.expected_json = json.loads(open(expected_filename).read())
+    @classmethod
+    def setUpClass(cls):
+        cls.current_json = json.loads(open(current_filename).read())
+        cls.expected_json = json.loads(open(expected_filename).read())
 
     def test_action(self):
         self.assertTrue(self.expected_json.get('action'))
@@ -119,3 +119,4 @@ class TransformedJsonTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
