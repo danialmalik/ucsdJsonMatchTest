@@ -7,7 +7,7 @@ EXPECTED = 'expected/'
 CURRENT = 'current/'
 
 
-EVENT_NAME = 'edx.grades.grading_policy_changed'
+EVENT_NAME = 'EVENT_NAME'
 
 
 current_filename = '{}{}{}.json'.format(JSON_FILES_PATH, CURRENT, EVENT_NAME)
