@@ -2,7 +2,7 @@ import unittest
 import json
 
 
-JSON_FILES_PATH = '/home/danial/work/arbisoft/ucsd/edx/edx-platform/openedx/features/caliper_tracking/tests/'
+JSON_FILES_PATH = 'tests/'
 EXPECTED = 'expected/'
 CURRENT = 'current/'
 
